@@ -13,10 +13,13 @@ def plot(data: Data):
     rect.set_facecolor('white')
     # plt.subplot(211)
     plt.xlabel("Years")
-    plt.plot(data.years, data.glob, color="orange", label="glob")
-    plt.plot(data.years, data.NHem)
-    plt.plot(data.years, data.SHem)
-    plt.title("data from")
+    plt.ylabel("Degrees Celsius")
+    plt.plot(data.years, data.glob, label="Global Means")
+    plt.plot(data.years, data.NHem, label="Northern Hemisphere")
+    plt.plot(data.years, data.SHem, label="Southern Hemisphere")
+    plt.legend(loc='upper left')
+    # plt.legend(bbox_to_anchor=(.5,1))
+    plt.title("Global and Hemispheric Monthly Means and Zonal Annual Means.")
     plt.show()
 
 
